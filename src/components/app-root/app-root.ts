@@ -35,6 +35,7 @@ export class AppRoot extends LitElement {
     appTitle: string;
     companyAddress: string;
     companyName: string;
+    companyPhone: string;
     facebookUrl: string;
     footerBackgroundColor: string;
     footerTextColor: string;
@@ -188,7 +189,7 @@ export class AppRoot extends LitElement {
       <li style="padding:0 5px;"><a href="/privacy-policy">Privacy Policy</a></li> | 
       <li style="padding:0 5px;"><a href="/tos">Terms of Service</a></li>
   </ul>`:null}
-  <a style="font-size:20px; width:${this.clientWidth < 600  ?'100%' : '200px'}; justify-content:${this.clientWidth > 600 ? 'center' :'flex-end'}; align-items:center; display: flex; text-decoration: none;color: #666; text-align:right;" href="tel:4806381100"><span><i class="mdi mdi-phone" style="padding-right: 5px;"></i>480.638.1100</span></a>
+  <a style="font-size:20px; width:${this.clientWidth < 600  ?'100%' : '200px'}; justify-content:${this.clientWidth > 600 ? 'center' :'flex-end'}; align-items:center; display: flex; text-decoration: none;color: #666; text-align:right;" href="tel:${this.settings.companyPhone}"><span><i class="mdi mdi-phone" style="padding-right: 5px;"></i>${this.settings.companyPhone}</span></a>
   <button class="mdc-button" style="--mdc-theme-primary:#555; font-size:24px;"><span><i class="mdi mdi-email"></i></span></button>
   </div>
   </footer>
