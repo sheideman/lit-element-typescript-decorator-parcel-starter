@@ -1,0 +1,60 @@
+{
+  "name": "typescript-lit-starter",
+  "version": "1.0.0",
+  "description": "A simple starter project for web components using LitElement and Typescript",
+  "main": "index.html",
+  "scripts": {
+    "wpbuild": "parcel build --no-cache index.html --public-url ./wp-content/themes/davis-v2/dist/",
+    "build": "parcel build --no-cache index.html",
+    "start": "node proxy.ts",
+    "dev": "parcel watch index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist": [
+    "last 10 chrome versions",
+    ">5%"
+  ],
+  "dependencies": {
+    "@material/animation": "^1.0.0",
+    "@material/button": "^1.1.1",
+    "@material/card": "^1.1.1",
+    "@material/chips": "^1.1.1",
+    "@material/dialog": "^1.1.1",
+    "@material/drawer": "^1.1.1",
+    "@material/form-field": "^1.1.0",
+    "@material/image-list": "^1.1.1",
+    "@material/layout-grid": "^0.41.0",
+    "@material/linear-progress": "^1.1.0",
+    "@material/list": "^1.1.1",
+    "@material/menu": "^1.1.1",
+    "@material/menu-surface": "^1.1.1",
+    "@material/ripple": "^1.1.0",
+    "@material/select": "^1.1.1",
+    "@material/shape": "^1.1.1",
+    "@material/slider": "^1.1.0",
+    "@material/snackbar": "^1.1.1",
+    "@material/switch": "^1.1.0",
+    "@material/tab-bar": "^1.1.1",
+    "@material/textfield": "^1.1.1",
+    "@material/top-app-bar": "^1.1.1",
+    "@types/node": "^11.13.7",
+    "@vaadin/router": "^1.2.0",
+    "express": "^4.16.4",
+    "flickity": "^2.2.0",
+    "flickity-fullscreen": "^1.1.1",
+    "http-proxy-middleware": "^0.19.1",
+    "lit-element": "^2.1.0",
+    "parcel-bundler": "^1.12.3",
+    "pwa-helpers": "^0.9.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "typescript": "^3.4.5"
+  }
+}

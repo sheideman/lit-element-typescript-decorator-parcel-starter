@@ -1,0 +1,126 @@
+<!doctype html>
+<!-- Note that adding an appcache really speeds things up after the first load
+     You need to amend the appcache file to meet your needs.
+     Don't forget to change the appcache file if you update ANY
+     of the files in it otherwise the old versions will ALWAYS be used.
+    <html lang="en" manifest="uibuilder.appcache">
+  -->
+<html lang="en">
+
+<head>
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+        <title>LitElement Typescript Starter</title>
+        <meta name="description" content="Description goes here">
+      <link rel="shortcut icon" href="src/assets/icon/favicon.ico" />
+  <link rel="stylesheet" type="text/css"
+    href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
+    <link href="https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style>
+     body {
+      margin: 0;
+      padding: 0;
+      font-family:'Lato', sans-serif;
+    display: flex;
+    height: 100vh;
+    }
+    :root{
+        --mdc-theme-primary:#fff;
+    --mdc-theme-on-primary:#333;
+    --opacity:1;
+    --primary-gradient: linear-gradient(to top, rgba(164,47,40,1) 0%, rgba(111,19,15,1) 100%);
+    --primary-color:#eee;
+    --text-color:#333;
+    --inverted-text-color:#fff;
+    --font-family: 'Lato',sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --secondary-color:#555;
+    --line-height:1.5;
+    --icon-color:var(--text-color, #333);
+    --icon-size: 24px;
+    --icon-button-width:40px;
+    --icon-button-height:40px;
+    --primary-button-text-color:var(--inverted-text-color, #333);
+    --primary-button-bg-color:var(--primary-color, gold);
+    --secondary-button-text-color:#333;
+    --secondary-button-bg-color:var(--secondary-color, --text-color);
+    --button-bg-color:var(--primary-color, #fcb900);
+    --button-text-color:var(--inverted-text-color, #fff);
+    --theme-header-bg-color:#fff;
+    --theme-header-text-color: var(--primary-color, #333);
+    --background-color:#fff;
+    --container-display:block;
+    --page-header-text-color:var(--inverted-text-color, #fff);
+    --page-header-bg-color:var(--primary-color, #eee);
+    --sidebar-link-color: #fff;
+    --sidebar-text-color:#fff;
+    --smaller-font-size:0.7em;
+    --page-header-text-shadow:1px 1px 3px #000;
+    --background-color: #fff;
+    --text-color: #222;
+    --link-color: var(--primary-color);
+    --font-size-1: 1rem;
+    --font-size-2: 1.2rem;
+    --font-size-3: 1.44rem;
+    --font-size-4: 1.728rem;
+    --font-size-5: 2.074rem;
+    --font-size-6: 2.488rem;
+}
+
+  @media screen and (min-width: 800px) {
+    :root {
+      /* scale for 1.33 */
+      --font-size-1: 1rem;
+      --font-size-2: 1.333rem;
+      --font-size-3: 1.777rem;
+      --font-size-4: 2.369rem;
+      --font-size-5: 3.157rem;
+      --font-size-6: 4.209rem;
+    }
+  };
+ 
+    .mdc-button:not(:disabled){
+      color:#fff;
+      background: var(--mdc-theme-primary);
+    }
+    .mdc-button:not(:disabled).mdc-dialog__button{
+      background:#eee;
+      color:#666;
+    }
+  </style>
+</head>
+
+<body class="flex column flex-start">
+  <script>
+    //Facebook API
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '796465480506161',
+        xfbml: true,
+        version: 'v2.9'
+      });
+      FB.AppEvents.logPageView();
+    };
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <app-root></app-root>
+  
+  <noscript>
+    Please enable JavaScript to view this website.
+  </noscript>
+  <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <!-- Built with love using PWA Starter Kit -->
+  <script type="module" src="src/components/app-root/app-root.ts"></script>
+</body>
+
+
+</html>
