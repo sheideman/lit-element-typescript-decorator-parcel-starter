@@ -6,6 +6,8 @@ export class WPPage extends LitElement {
 // This decorator creates a property accessor that triggers rendering and
 // an observed attribute.
 @property()
+url='URL_HERE';
+@property()
 loading=true;
 @property()
 error=false;
@@ -102,7 +104,7 @@ firstUpdated(){
    async fetchPage(){
        const slug = this.location.params.page;
        console.log(slug);
-   const response = await fetch(`https://davis-wp-dev-sheideman.c9users.io/wp-json/wp/v2/pages?slug=${slug}&_embed`);
+   const response = await fetch(`${this.url}/wp-json/wp/v2/pages?slug=${slug}&_embed`);
    console.log(response);
  
    try{

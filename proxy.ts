@@ -9,9 +9,9 @@ const bundler = new Bundler('index.html', {
 const app = express()
 
 app.use(
-  '/graphql',
+  '/api',
   proxy({
-    target: 'https://davis-wp-dev-sheideman.c9users.io'
+    target: 'REMOTE_URL_HERE'
   })
 )
 app.use(bundler.middleware())
