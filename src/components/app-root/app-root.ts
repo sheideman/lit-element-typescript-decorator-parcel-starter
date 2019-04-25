@@ -25,45 +25,44 @@ export class AppRoot extends LitElement {
   drawer: MDCDrawer;
   @property()
   settings: {
-    annoucementBackgroundColor: any;
-    announcementActionBackgroundColor: any;
-    announcementActionLink: any;
-    announcementActionText: any;
-    announcementActionTextColor: any;
-    announcementText: any;
-    announcementTextColor: any;
-    appTitle: any;
-    companyAddress: any;
-    companyName: any;
-    facebookUrl: any;
-    footerBackgroundColor: boolean;
-    footerTextColor: boolean;
-    gaTrackingId: any;
-    gtmTrackingId: any;
-    headerBackgroundColor: any;
-    headerBrandingStyle: any;
-    headerTextColor: any;
-    icon: any;
-    instagramUrl: any;
-    linkColor: any;
-    linkedinUrl: any;
-    logo: any[];
-    primaryButtonBackgroundColor: any;
-    primaryButtonTextColor: any;
-    primaryColor: any;
-    secondaryButtonBackgroundColor: any;
-    secondaryButtonTextColor: any;
-    secondaryColor: any;
+    annoucementBackgroundColor: string;
+    announcementActionBackgroundColor: string;
+    announcementActionLink: string;
+    announcementActionText: string;
+    announcementActionTextColor: string;
+    announcementText: string;
+    announcementTextColor: string;
+    appTitle: string;
+    companyAddress: string;
+    companyName: string;
+    facebookUrl: string;
+    footerBackgroundColor: string;
+    footerTextColor: string;
+    gaTrackingId: string;
+    gtmTrackingId: string;
+    headerBackgroundColor: string;
+    headerBrandingStyle: string;
+    headerTextColor: string;
+    icon: string;
+    instagramUrl: string;
+    linkColor: string;
+    linkedinUrl: string;
+    logo: any;
+    primaryButtonBackgroundColor: string;
+    primaryButtonTextColor: string;
+    primaryColor: string;
+    secondaryButtonBackgroundColor: string;
+    secondaryButtonTextColor: string;
+    secondaryColor: string;
     showAnnouncement: boolean;
-    textColor: any;
-    twitterUrl: any;
-    youtubeUrl: any;
+    textColor: string;
+    twitterUrl: string;
+    youtubeUrl: string;
 };
 
   static styles = css`
   :host {
     display: block;
-
   }
   .fullsize-content-centered-panel{
     display:flex; 
@@ -135,10 +134,6 @@ export class AppRoot extends LitElement {
     padding:1em;
   }
   `;
-constructor(){
-  super();
-  this.fetchSettings();
-}
   // Render element DOM by returning a `lit-html` template.
   render() {
     return html`
@@ -218,41 +213,5 @@ initMaterialWebComponents(){
       });
       
 }
-async fetchSettings(){
-  const response = await fetch('https://davis-wp-dev-sheideman.c9users.io/wp-json/davis_v2/v1/settings');
-  const data = await response.json();
-  if(data){
-    document.documentElement.style.setProperty(`--primary-color`, data.primaryColor);
-    document.documentElement.style.setProperty(`--secondary-color`, data.secondaryColor);
-    document.documentElement.style.setProperty(`--link-color`, data.linkColor);
-    document.documentElement.style.setProperty(`--text-color`, data.textColor);
-    document.documentElement.style.setProperty(`--primary-color`, data.primaryColor);
-document.documentElement.style.setProperty(`--primary-button-text-color`,data.primaryButtonTextColor);
-document.documentElement.style.setProperty(`--primary-button-bg-color`,data.primaryButtonBackgroundColor);
-document.documentElement.style.setProperty(`--secondary-button-text-color`,data.secondaryButtonTextColor);
-document.documentElement.style.setProperty(`--secondary-button-bg-color`,data.secondaryButtonBackgroundColor);
-document.documentElement.style.setProperty(`--button-bg-color`,data.primaryButtonBackgroundColor);
-document.documentElement.style.setProperty(`--button-text-color`,data.primaryButtonBackgroundColor);
-document.documentElement.style.setProperty(`--theme-header-bg-color`,data.headerBackgroundColor);
-document.documentElement.style.setProperty(`--theme-header-text-color`,data.headerTextColor);
-document.documentElement.style.setProperty(`--theme-footer-bg-color`,data.footerBackgroundColor);
-document.documentElement.style.setProperty(`--theme-footer-text-color`,data.footerTextColor);
-document.documentElement.style.setProperty(`--announcement-text-color`,data.announcementTextColor);
-document.documentElement.style.setProperty(`--announcement-bg-color`,data.announcementTextColor);
-document.documentElement.style.setProperty(` --action-link-bg-color`,data.announcementActionBackgroundColor);
-document.documentElement.style.setProperty(`--action-link-text-color`,data.announcementActionTextColor);
-document.documentElement.style.setProperty(`--announcement-text-color`,data.announcementTextColor);
-document.documentElement.style.setProperty(`--announcement-bg-color`,data.announcementTextColor);
-document.documentElement.style.setProperty(` --action-link-bg-color`,data.announcementActionBackgroundColor);
-document.documentElement.style.setProperty(`--action-link-text-color`,data.announcementActionTextColor);
 
-  }
-
-  try{
-  console.log('settings-->',data); 
-  this.settings = data;
- }catch(err){
-     console.log(err)
- }
-}
 }
